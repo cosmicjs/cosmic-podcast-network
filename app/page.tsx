@@ -4,7 +4,7 @@ import { CategoriesList } from "@/cosmic/blocks/videos/CategoriesList";
 
 export default async function Home() {
   return (
-    <div className="p-8 pt-4">
+    <div className="p-4 md:p-8 pt-4">
       <CategoriesList
         query={{ type: "categories" }}
         sort="-created_at"

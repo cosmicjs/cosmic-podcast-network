@@ -7,6 +7,7 @@ import { VideoType } from "./VideoCard";
 import { PlayArea } from "./PlayArea";
 import Link from "next/link";
 import { CategoryPill, CategoryType } from "./CategoryPill";
+import { Comments } from "@/cosmic/blocks/comments/Comments";
 
 export async function SingleVideo({
   query,
@@ -36,10 +37,10 @@ export async function SingleVideo({
             <h1 className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
               {video.title}
             </h1>
-            <div className="mb-8 md:flex">
+            <div className="mb-8 md:flex gap-4">
               <Link
                 href={`/channels/${video.metadata.channel.slug}`}
-                className="flex items-center gap-3"
+                className="flex items-center gap-3 mb-4"
               >
                 <img
                   className="mr-2 h-[60px] w-[60px] rounded-full object-cover"
@@ -55,7 +56,7 @@ export async function SingleVideo({
                   </span>
                 </div>
               </Link>
-              <div className="md:absolute md:right-0">
+              <div className="md:absolute md:right-0 flex">
                 {video.metadata.categories.map((category: CategoryType) => {
                   return <CategoryPill key={category.id} category={category} />;
                 })}
@@ -67,6 +68,13 @@ export async function SingleVideo({
             />
           </div>
         </section>
+        <Comments
+          query={{
+            type: "comments",
+            "metadata.resource": video.id,
+            "metadata.approved": true,
+          }}
+        />
       </div>
     );
   } catch (e: any) {

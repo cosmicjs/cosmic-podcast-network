@@ -18,7 +18,7 @@ export default async function CategoryPage({
       .props("id,slug,title,thumbnail,created_at")
       .depth(1);
     return (
-      <div className="p-8 pt-4">
+      <div className="p-4 md:p-8 pt-4">
         <CategoriesList
           query={{ type: "categories" }}
           activeId={category.id}

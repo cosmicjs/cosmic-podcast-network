@@ -26,7 +26,7 @@ export function CategoryPill({
           active
             ? "bg-white dark:bg-black border-2 border-teal-500"
             : "bg-gray-200 dark:bg-gray-900 border-2 dark:border-gray-900",
-          `rounded-2xl flex p-1 px-3 gap-2`
+          `rounded-2xl flex p-1 px-3 gap-2 items-center`
         )}
       >
         <img
