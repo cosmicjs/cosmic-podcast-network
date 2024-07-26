@@ -42,7 +42,7 @@ export function VideoCard({
         <img
           alt={video.title}
           className="h-[175px] 2xl:h-[250px] w-full object-cover rounded-lg"
-          src={`${video.metadata.thumbnail.imgix_url}?w=1200&auto=format,compression`}
+          src={`${video.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}
         />
         <div className="relative mb-2">
           <h2 className="mt-2 text-2xl font-bold text-black dark:text-white">

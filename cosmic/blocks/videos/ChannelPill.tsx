@@ -24,7 +24,7 @@ export function ChannelPill({ channel }: { channel: ChannelType }) {
       >
         <img
           alt={channel.title}
-          src={`${channel.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}
+          src={`${channel.metadata.thumbnail.imgix_url}?w=80&auto=format,compression`}
           className="h-[40px] w-[40px] rounded-full object-cover"
         />
       </div>
