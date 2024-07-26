@@ -28,18 +28,22 @@ export async function VideoList({
   status?: "draft" | "published" | "any";
   noWrap?: boolean;
 }) {
-  const { objects: videos } = await cosmic.objects
-    .find(query)
-    .props("id,slug,title,metadata,created_at")
-    .depth(1)
-    .sort(sort ? sort : "-order")
-    .limit(limit ? limit : 100)
-    .skip(skip ? skip : 0)
-    .status(status ? status : "published");
-  if (noWrap) return <Videos videos={videos} />;
-  return (
-    <div className={className}>
-      <Videos videos={videos} />
-    </div>
-  );
+  try {
+    const { objects: videos } = await cosmic.objects
+      .find(query)
+      .props("id,slug,title,metadata,created_at")
+      .depth(1)
+      .sort(sort ? sort : "-order")
+      .limit(limit ? limit : 100)
+      .skip(skip ? skip : 0)
+      .status(status ? status : "published");
+    if (noWrap) return <Videos videos={videos} />;
+    return (
+      <div className={className}>
+        <Videos videos={videos} />
+      </div>
+    );
+  } catch (e: any) {
+    if (e.status === 404) return <>No results found.</>;
+  }
 }
