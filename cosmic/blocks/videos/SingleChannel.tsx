@@ -39,7 +39,7 @@ export async function SingleChannel({
             </h1>
           </div>
         </section>
-        <div className="flex items-center mb-6 border-b dark:border-gray-500 pb-4"></div>
+        <div className="flex items-center mb-6 border-b dark:border-gray-800 pb-4"></div>
         <section className="px-4 mb-8 md:px-8 max-w-[1650px] m-auto relative">
           <h2 className="text-2xl font-semibold mb-4 text-black dark:text-white">
             About

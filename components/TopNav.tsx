@@ -4,7 +4,7 @@ import { GitHubLink } from "@/components/GitHubLink";
 
 export function TopNav() {
   return (
-    <div className="w-full bg-white dark:bg-black z-10 h-[70px] top-0 fixed border-b dark:border-gray-500 items-center flex px-4">
+    <div className="w-full bg-white dark:bg-black z-10 h-[70px] top-0 fixed border-b dark:border-gray-800 items-center flex px-4">
       <Link href="/" className="items-center flex">
         <CirclePlayIcon className="size-8 mr-2 text-teal-500" />
         Cosmic Podcast Network
