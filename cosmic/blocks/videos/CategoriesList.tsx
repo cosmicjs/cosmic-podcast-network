@@ -1,11 +1,23 @@
 import { CategoryPill, CategoryType } from "./CategoryPill";
 import { cosmic } from "@/cosmic/client";
 
-function Categories({ categories }: { categories: CategoryType[] }) {
+function Categories({
+  categories,
+  activeId,
+}: {
+  categories: CategoryType[];
+  activeId?: string;
+}) {
   return (
     <>
       {categories.map((category: CategoryType) => {
-        return <CategoryPill key={category.id} category={category} />;
+        return (
+          <CategoryPill
+            key={category.id}
+            active={activeId ? activeId === category.id : false}
+            category={category}
+          />
+        );
       })}
     </>
   );
@@ -19,6 +31,7 @@ export async function CategoriesList({
   className,
   status,
   noWrap = false,
+  activeId,
 }: {
   query: any;
   sort?: string;
@@ -27,6 +40,7 @@ export async function CategoriesList({
   className?: string;
   status?: "draft" | "published" | "any";
   noWrap?: boolean;
+  activeId?: boolean;
 }) {
   const { objects: categories } = await cosmic.objects
     .find(query)
@@ -39,7 +53,7 @@ export async function CategoriesList({
   if (noWrap) return <Categories categories={categories} />;
   return (
     <div className={className}>
-      <Categories categories={categories} />
+      <Categories categories={categories} activeId={activeId} />
     </div>
   );
 }
