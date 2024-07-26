@@ -44,15 +44,15 @@ export function VideoCard({
           className="h-[175px] 2xl:h-[250px] w-full object-cover rounded-lg"
           src={`${video.metadata.thumbnail.imgix_url}?w=1200&auto=format,compression`}
         />
-        <div className="relative z-10 mb-2">
+        <div className="relative mb-2">
           <h2 className="mt-2 text-2xl font-bold text-black dark:text-white">
             {video.title}
           </h2>
         </div>
       </Link>
-      <div className="flex flex-col justify-between0">
+      <div className="flex flex-col justify-between">
         <div
-          className="relative z-10 flex w-full flex-col items-start justify-between 
+          className="relative flex w-full flex-col items-start justify-between 
           space-y-10 md:flex-row md:items-center md:space-y-0"
         >
           <div className="flex w-full items-center gap-10 text-sm text-gray-700 dark:text-gray-300">
