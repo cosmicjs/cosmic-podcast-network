@@ -6,13 +6,13 @@
 
 [[View Live Demo](https://cosmic-podcast-network.vercel.app)]
 
-A podcast network template that shows you how to build a podcast / video entertainment website using Cosmic CMS, Next.js, the [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk), and React Server Actions.
+A podcast network template that shows you how to build a podcast / video entertainment website using Cosmic CMS, Next.js, and the [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk).
 
 ## Features
 
-- React Server Actions
-- Server Actions (No exposed API keys)
-- Tailwind CSS
+- Performance optimized
+- Mobile ready
+- Dark mode
 
 ## Getting Started
 
