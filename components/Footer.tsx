@@ -1,6 +1,6 @@
 export function Footer() {
   return (
-    <span className="flex items-center gap-4 justify-center my-10">
+    <span className="flex items-center gap-4 justify-center my-16">
       <a
         href="https://www.cosmicjs.com?utm_source=cosmic-podcast-network"
         target="_blank"

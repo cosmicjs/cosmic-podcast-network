@@ -14,7 +14,7 @@ export default async function Home() {
     .depth(1);
   return (
     <>
-      <section className="p-4 md:p-8 pt-4">
+      <section className="p-4 md:p-8 pt-4 mb-6">
         <CategoriesList
           query={{ type: "categories" }}
           sort="-created_at"
@@ -33,7 +33,7 @@ export default async function Home() {
         />
       </section>
       <div className="flex items-center border-b dark:border-gray-800"></div>
-      <section className="p-4 md:p-8">
+      <section className="p-4 md:p-8 pt-10 pb-16">
         <h2 className="mb-8 text-2xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
           Featured Channels
         </h2>
