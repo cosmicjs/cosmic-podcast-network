@@ -30,7 +30,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TopNav />
           <SideBar />
-          <div className="ml-[80px] mt-[70px]">{children}</div>
+          <div className="md:ml-[80px] mt-[70px]">{children}</div>
           <TailwindIndicator />
         </ThemeProvider>
       </body>
