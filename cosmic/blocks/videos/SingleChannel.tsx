@@ -29,7 +29,7 @@ export async function SingleChannel({
           />
         </div>
         <section className="px-8 mb-10 max-w-[1650px] m-auto">
-          <div className="flex items-center mb-4 gap-4">
+          <div className="flex items-center mb-4 gap-3">
             <img
               alt={channel.title}
               src={`${channel.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}

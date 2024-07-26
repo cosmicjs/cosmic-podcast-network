@@ -13,13 +13,13 @@ export default async function Home() {
         className="mb-8 m-auto flex flex-wrap gap-2"
       />
       <h1 className="mb-8 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
-        Today{`'`}s Picks
+        Today{`'`}s Video Picks
       </h1>
       <VideoList
         query={{ type: "videos" }}
         limit={10}
         skip={0}
-        className="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4"
+        className="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
       />
     </div>
   );
