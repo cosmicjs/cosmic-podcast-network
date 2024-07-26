@@ -3,7 +3,7 @@
 import { VideoList } from "@/cosmic/blocks/videos/VideoList";
 import { CategoriesList } from "@/cosmic/blocks/videos/CategoriesList";
 import { cosmic } from "@/cosmic/client";
-import Link from "next/link";
+import { ChannelPill, ChannelType } from "@/cosmic/blocks/videos/ChannelPill";
 
 export default async function Home() {
   const { objects: channels } = await cosmic.objects
@@ -34,28 +34,8 @@ export default async function Home() {
         Featured Channels
       </h2>
       <div className="flex flex-wrap gap-4">
-        {channels?.map((channel: any) => {
-          return (
-            <Link
-              key={channel.id}
-              href={`/channels/${channel.slug}`}
-              className="rounded-xl flex p-4 px-6 gap-4 items-center bg-gray-200 dark:bg-gray-900"
-            >
-              <div
-                className="flex items-center justify-center overflow-hidden 
-            rounded-full bg-gray-200 dark:bg-gray-800"
-              >
-                <img
-                  alt={channel.title}
-                  src={`${channel.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}
-                  className="h-[40px] w-[40px] rounded-full object-cover"
-                />
-              </div>
-              <div>
-                <span className="font-semibold">{channel.title}</span>
-              </div>
-            </Link>
-          );
+        {channels?.map((channel: ChannelType) => {
+          return <ChannelPill key={channel.id} channel={channel} />;
         })}
       </div>
     </div>
