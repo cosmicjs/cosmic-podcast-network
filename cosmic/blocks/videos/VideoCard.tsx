@@ -67,7 +67,7 @@ export function VideoCard({
                 <img
                   alt={video.metadata.channel.title}
                   src={`${video.metadata.channel.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}
-                  className="h-[50px] w-[50px] rounded-full object-cover"
+                  className="h-[40px] w-[40px] rounded-full object-cover"
                 />
               </div>
               <div>
