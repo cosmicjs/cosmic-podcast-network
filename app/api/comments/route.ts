@@ -4,7 +4,6 @@ import { cosmic } from "@/cosmic/client";
 
 export async function POST(request: NextRequest) {
   const res = await request.json();
-  console.log(res)
   const data = await cosmic.objects.insertOne(res.comment);
   return Response.json(data);
 }
