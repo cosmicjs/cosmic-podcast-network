@@ -27,7 +27,7 @@ export async function SingleChannel({
             className="aspect-video w-full object-cover"
           />
         </div>
-        <section className="px-8 mb-10 max-w-[1650px] m-auto">
+        <section className="px-4 md:px-8 mb-10 max-w-[1650px] m-auto">
           <div className="flex items-center mb-4 gap-3">
             <img
               alt={channel.title}
@@ -43,7 +43,7 @@ export async function SingleChannel({
             dangerouslySetInnerHTML={{ __html: channel.metadata.description }}
           />
         </section>
-        <section className="px-8 mb-10 max-w-[1650px] m-auto">
+        <section className="px-4 md:px-8 mb-10 max-w-[1650px] m-auto">
           <h2 className="mb-4 text-2xl font-extrabold leading-tight tracking-tighter text-black dark:text-white">
             Videos
           </h2>
