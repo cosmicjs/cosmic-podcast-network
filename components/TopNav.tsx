@@ -1,5 +1,6 @@
 import { CirclePlayIcon } from "lucide-react";
 import Link from "next/link";
+import { GitHubLink } from "@/components/GitHubLink";
 
 export function TopNav() {
   return (
@@ -8,6 +9,7 @@ export function TopNav() {
         <CirclePlayIcon className="size-8 mr-2 text-teal-500" />
         Cosmic Podcast Network
       </Link>
+      <GitHubLink />
     </div>
   );
 }
