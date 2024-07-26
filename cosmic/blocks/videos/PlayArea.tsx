@@ -8,7 +8,7 @@ export function PlayArea({ video }: { video: VideoType }) {
   return (
     <>
       {!isClicked ? (
-        <div className="relative overflow-hidden cursor-pointer max-h-[1000px]">
+        <div className="relative overflow-hidden cursor-pointer max-h-[75vh]">
           <button onClick={() => setIsClicked(true)} className="w-full">
             <img
               src={`${video.metadata.thumbnail.imgix_url}?w=2000&auto=format,compression`}
@@ -24,7 +24,7 @@ export function PlayArea({ video }: { video: VideoType }) {
         <video
           src={video.metadata.video.url}
           controls
-          className="w-full max-h-[1000px]"
+          className="w-full max-h-[75vh]"
           autoPlay
         />
       )}
