@@ -40,7 +40,7 @@ export async function CategoriesList({
   className?: string;
   status?: "draft" | "published" | "any";
   noWrap?: boolean;
-  activeId?: boolean;
+  activeId?: string;
 }) {
   const { objects: categories } = await cosmic.objects
     .find(query)
