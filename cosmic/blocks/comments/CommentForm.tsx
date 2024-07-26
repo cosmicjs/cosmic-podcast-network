@@ -73,7 +73,6 @@ export function CommentForm({
   }
   return (
     <div className={cn("mb-8", className)}>
-      <h2 className="mb-4 text-2xl">Add a new comment</h2>
       {error && (
         <div className="mb-4 flex rounded-xl border border-red-500 p-8">
           <XCircle className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />

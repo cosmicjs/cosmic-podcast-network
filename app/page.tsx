@@ -1,4 +1,4 @@
-// app/video/page.tsx
+// app/page.tsx
 import { VideoList } from "@/cosmic/blocks/videos/VideoList";
 import { CategoriesList } from "@/cosmic/blocks/videos/CategoriesList";
 

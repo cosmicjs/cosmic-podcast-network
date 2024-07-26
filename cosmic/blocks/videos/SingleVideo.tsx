@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-// app/video/[slug]/page.tsx
 import { cosmic } from "@/cosmic/client";
 import { notFound } from "next/navigation";
 import { getFormattedDate } from "@/cosmic/utils";

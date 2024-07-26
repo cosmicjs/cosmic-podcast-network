@@ -1,4 +1,4 @@
-// app/video/[slug]/page.tsx
+// app/channels/[slug]/page.tsx
 import { SingleChannel } from "@/cosmic/blocks/videos/SingleChannel";
 export default async function SingleVideoPage({
   params,
