@@ -6,6 +6,7 @@ import { SideBar } from "@/components/SideBar";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/cosmic/utils";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default function RootLayout({
           <SideBar />
           <div className="md:ml-[80px] mt-[70px]">{children}</div>
           <TailwindIndicator />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
