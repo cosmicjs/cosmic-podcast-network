@@ -32,7 +32,7 @@ export async function SingleChannel({
             <img
               alt={channel.title}
               src={`${channel.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}
-              className="h-[100px] w-[100px] rounded-full object-cover border-8 border-white"
+              className="h-[100px] w-[100px] rounded-full object-cover border-4 border-white"
             />
             <h1 className="text-3xl relative top-[22px] font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
               {channel.title}
