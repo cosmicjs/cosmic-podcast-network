@@ -20,24 +20,30 @@ export async function SingleChannel({
       .status(status ? status : "published");
     return (
       <div className={className}>
-        <div className="mb-6 w-full max-h-[400px] overflow-hidden">
+        <div className="mb-6 w-full max-h-[300px] overflow-hidden">
           <img
             src={`${channel.metadata.backsplash.imgix_url}?w=2000&auto=format,compression`}
             alt={channel.title}
             className="aspect-video w-full object-cover"
           />
         </div>
-        <section className="px-4 md:px-8 mb-10 max-w-[1650px] m-auto">
-          <div className="flex items-center mb-4 gap-3">
+        <section className="px-4 md:px-8 max-w-[1650px] m-auto relative -top-[55px] h-[44px]">
+          <div className="flex items-center mb-6 gap-6 pb-4">
             <img
               alt={channel.title}
               src={`${channel.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}
-              className="h-[50px] w-[50px] rounded-full object-cover"
+              className="h-[100px] w-[100px] rounded-full object-cover border-8 border-white"
             />
-            <h1 className="text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
+            <h1 className="text-3xl relative top-[22px] font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
               {channel.title}
             </h1>
           </div>
+        </section>
+        <div className="flex items-center mb-6 border-b dark:border-gray-500 pb-4"></div>
+        <section className="px-4 mb-8 md:px-8 max-w-[1650px] m-auto relative">
+          <h2 className="text-2xl font-semibold mb-4 text-black dark:text-white">
+            About
+          </h2>
           <div
             className="space-y-4 text-zinc-700 dark:text-zinc-300"
             dangerouslySetInnerHTML={{ __html: channel.metadata.description }}
