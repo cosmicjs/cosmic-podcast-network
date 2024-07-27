@@ -14,14 +14,14 @@ export default async function Home() {
     .depth(1);
   return (
     <>
-      <section className="p-4 md:p-8 pt-4 mb-6">
+      <section className="p-4 md:px-8 mb-6">
         <CategoriesList
           query={{ type: "categories" }}
           limit={10}
           skip={0}
-          className="mb-8 m-auto flex flex-wrap gap-2"
+          className="mb-6 m-auto flex flex-wrap gap-2"
         />
-        <h1 className="mb-8 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
+        <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
           Today{`'`}s Video Picks
         </h1>
         <VideoList
