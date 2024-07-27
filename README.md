@@ -10,9 +10,9 @@ A podcast network template that shows you how to build a podcast / video enterta
 
 ## Features
 
-- 🔥 Performance optimized
-- 📱 Mobile ready
-- 🌓 Dark mode
+🔥 Performance optimized
+📱 Mobile ready
+🌓 Dark mode
 
 ## Getting Started
 
