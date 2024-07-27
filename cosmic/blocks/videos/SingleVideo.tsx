@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { cosmic } from "@/cosmic/client";
 import { notFound } from "next/navigation";
-import { getFormattedDate } from "@/cosmic/utils";
+import { timeAgo } from "@/helpers/timeAgo";
 import { VideoType } from "./VideoCard";
 import { PlayArea } from "./PlayArea";
 import Link from "next/link";
@@ -24,7 +24,7 @@ export async function SingleVideo({
       .depth(1)
       .status(status ? status : "published");
 
-    const date = getFormattedDate(video.created_at);
+    const date = timeAgo(video.created_at);
 
     return (
       <div className={className}>

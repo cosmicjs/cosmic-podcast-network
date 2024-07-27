@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { getFormattedDate } from "@/cosmic/utils";
+import { timeAgo } from "@/helpers/timeAgo";
 import { CategoryType } from "./CategoryPill";
 
 export type VideoType = {
@@ -75,7 +75,7 @@ export function VideoCard({
                   {video.metadata.channel.title}
                 </span>
                 <br />
-                {getFormattedDate(video.created_at)}
+                {timeAgo(video.created_at)}
               </div>
             </Link>
           </div>
