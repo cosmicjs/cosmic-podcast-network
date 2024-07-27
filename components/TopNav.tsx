@@ -6,8 +6,8 @@ import { cosmic } from "@/cosmic/client";
 export async function TopNav() {
   const { object: globalSettings } = await cosmic.objects
     .findOne({
-      type: "global-settings",
-      slut: "global-settings",
+      type: "settings",
+      slut: "settings",
     })
     .props("metadata")
     .depth(1);
