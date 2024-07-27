@@ -9,7 +9,7 @@ function Categories({
   activeId?: string;
 }) {
   return (
-    <>
+    <div className="flex flex-nowrap gap-2 overflow-y-scroll">
       {categories.map((category: CategoryType) => {
         return (
           <CategoryPill
@@ -19,7 +19,7 @@ function Categories({
           />
         );
       })}
-    </>
+    </div>
   );
 }
 
