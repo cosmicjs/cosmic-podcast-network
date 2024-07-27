@@ -31,12 +31,12 @@ export async function SingleVideo({
         <div className="w-full">
           <PlayArea video={video} />
         </div>
-        <section className="m-auto grid items-center pb-8 md:container p-4 pt-8">
+        <section className="m-auto grid items-center pb-8 md:container p-4 pt-8 mb-8">
           <div className="relative m-auto flex w-full md:w-[750px] flex-col items-start gap-2">
             <h1 className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
               {video.title}
             </h1>
-            <div className="mb-8 md:flex gap-4">
+            <div className="mb-2 md:flex gap-4">
               <Link
                 href={`/channels/${video.metadata.channel.slug}`}
                 className="flex items-center gap-3 mb-4"
