@@ -6,7 +6,9 @@ export type CategoryType = {
   title: string;
   slug: string;
   created_at: string;
-  thumbnail: string;
+  metadata: {
+    emoji: string;
+  };
 };
 
 export function CategoryPill({
@@ -29,12 +31,8 @@ export function CategoryPill({
           `rounded-2xl flex p-1 px-3 gap-2 items-center`
         )}
       >
-        <img
-          alt={category.title}
-          className="h-[20px] w-[20px] object-cover rounded-full"
-          src={`${category.thumbnail}?w=40&auto=format,compression`}
-        />
-        {category.title}
+        <span>{category.metadata?.emoji}</span>
+        <span>{category.title}</span>
       </Link>
     </div>
   );
