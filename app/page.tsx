@@ -17,7 +17,6 @@ export default async function Home() {
       <section className="p-4 md:p-8 pt-4 mb-6">
         <CategoriesList
           query={{ type: "categories" }}
-          sort="-created_at"
           limit={10}
           skip={0}
           className="mb-8 m-auto flex flex-wrap gap-2"

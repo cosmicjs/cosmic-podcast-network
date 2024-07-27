@@ -22,7 +22,6 @@ export default async function CategoryPage({
         <CategoriesList
           query={{ type: "categories" }}
           activeId={category.id}
-          sort="-created_at"
           limit={10}
           skip={0}
           className="mb-8 m-auto flex flex-wrap gap-2"
