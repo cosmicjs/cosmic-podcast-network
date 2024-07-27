@@ -22,7 +22,7 @@ export default async function Home() {
           className="mb-6 m-auto flex flex-wrap gap-2"
         />
         <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
-          Today{`'`}s Video Picks
+          Today{`'`}s Picks
         </h1>
         <VideoList
           query={{ type: "videos" }}
