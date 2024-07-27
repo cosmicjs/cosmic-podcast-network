@@ -9,6 +9,8 @@ import { cn } from "@/cosmic/utils";
 import { Footer } from "@/components/Footer";
 import { cosmic } from "@/cosmic/client";
 
+export const revalidate = 60;
+
 const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata() {
