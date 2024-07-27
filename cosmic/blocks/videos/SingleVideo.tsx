@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { cosmic } from "@/cosmic/client";
 import { notFound } from "next/navigation";
-import { timeAgo } from "@/helpers/timeAgo";
+import { TimeAgo } from "@/components/TimeAgo";
 import { VideoType } from "./VideoCard";
 import { PlayArea } from "./PlayArea";
 import Link from "next/link";
@@ -23,8 +23,6 @@ export async function SingleVideo({
       .props("id,slug,title,metadata,created_at")
       .depth(1)
       .status(status ? status : "published");
-
-    const date = timeAgo(video.created_at);
 
     return (
       <div className={className}>
@@ -51,7 +49,7 @@ export async function SingleVideo({
                     {video.metadata.channel.title}
                   </span>
                   <span className="text-zinc-500 dark:text-zinc-400">
-                    {date}
+                    <TimeAgo time={video.created_at} />
                   </span>
                 </div>
               </Link>

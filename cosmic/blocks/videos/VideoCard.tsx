@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { timeAgo } from "@/helpers/timeAgo";
+import { TimeAgo } from "@/components/TimeAgo";
 import { CategoryType } from "./CategoryPill";
 
 export type VideoType = {
@@ -75,7 +75,7 @@ export function VideoCard({
                   {video.metadata.channel.title}
                 </span>
                 <br />
-                {timeAgo(video.created_at)}
+                <TimeAgo time={video.created_at} />
               </div>
             </Link>
           </div>
