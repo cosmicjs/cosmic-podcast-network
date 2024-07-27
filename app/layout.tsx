@@ -7,13 +7,28 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/cosmic/utils";
 import { Footer } from "@/components/Footer";
+import { cosmic } from "@/cosmic/client";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Cosmic Podcast Network",
-  description: "A podcast network example website built with the Cosmic CMS.",
-};
+export async function generateMetadata() {
+  const { object: globalSettings } = await cosmic.objects
+    .findOne({
+      type: "settings",
+      slut: "settings",
+    })
+    .props("metadata")
+    .depth(1);
+  return {
+    title: globalSettings.metadata.site_title,
+    description: globalSettings.metadata.description,
+    openGraph: {
+      images: [
+        "https://imgix.cosmicjs.com/f2eeb900-4b9b-11ef-b1ea-f56c65dfade9-cosmic-podcast-network-screenshot.png?w=2000&auto=forat,compression",
+      ],
+    },
+  };
+}
 
 export default function RootLayout({
   children,
