@@ -1,15 +1,16 @@
-// app/categories/[slug]/page.tsx
+// app/categories/[slug]/layout.tsx
 import { CategoriesList } from "@/cosmic/blocks/videos/CategoriesList";
 import { cosmic } from "@/cosmic/client";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Loader } from "@/components/Loader";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } },
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const { object: category } = await cosmic.objects
     .findOne({
       slug: params.slug,

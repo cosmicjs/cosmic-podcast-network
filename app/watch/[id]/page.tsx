@@ -1,4 +1,4 @@
-// app/watch/[slug]/page.tsx
+// app/watch/[id]/page.tsx
 import { SingleVideo } from "@/cosmic/blocks/videos/SingleVideo";
 import { Loader } from "@/components/Loader";
 import { Suspense } from "react";
