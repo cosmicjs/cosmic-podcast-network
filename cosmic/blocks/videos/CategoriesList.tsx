@@ -3,10 +3,10 @@ import { cosmic } from "@/cosmic/client";
 
 function Categories({
   categories,
-  activeId,
+  activeSlug,
 }: {
   categories: CategoryType[];
-  activeId?: string;
+  activeSlug?: string;
 }) {
   return (
     <div className="flex flex-nowrap gap-2 overflow-y-scroll">
@@ -14,7 +14,7 @@ function Categories({
         return (
           <CategoryPill
             key={category.id}
-            active={activeId ? activeId === category.id : false}
+            active={activeSlug ? activeSlug === category.slug : false}
             category={category}
           />
         );
@@ -31,7 +31,7 @@ export async function CategoriesList({
   className,
   status,
   noWrap = false,
-  activeId,
+  activeSlug,
 }: {
   query: any;
   sort?: string;
@@ -40,7 +40,7 @@ export async function CategoriesList({
   className?: string;
   status?: "draft" | "published" | "any";
   noWrap?: boolean;
-  activeId?: string;
+  activeSlug?: string;
 }) {
   const { objects: categories } = await cosmic.objects
     .find(query)
@@ -53,7 +53,7 @@ export async function CategoriesList({
   if (noWrap) return <Categories categories={categories} />;
   return (
     <div className={className}>
-      <Categories categories={categories} activeId={activeId} />
+      <Categories categories={categories} activeSlug={activeSlug} />
     </div>
   );
 }
