@@ -16,7 +16,7 @@ export default async function CategoryPage({
         slug: params.slug,
         type: "categories",
       })
-      .props("slug,title")
+      .props("id,title")
       .depth(1);
     return (
       <>
