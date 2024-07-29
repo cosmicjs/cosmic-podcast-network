@@ -14,6 +14,8 @@ A podcast network website powered by the [Cosmic CMS](https://www.cosmicjs.com/)
 
 🔥 Performance optimized
 
+🪄 Partial prerendering
+
 📱 Mobile ready
 
 🌓 Dark mode
