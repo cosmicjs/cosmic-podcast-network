@@ -18,7 +18,7 @@
     "next": "canary",
     "next-themes": "^0.3.0",
     "react": "beta",
-    "react-dom": "^18",
+    "react-dom": "beta",
     "react-markdown": "^9.0.1",
     "tailwind-merge": "^2.4.0"
   },
