@@ -6,7 +6,7 @@
 
 [[View Live Demo](https://cosmic-podcast-network.vercel.app)]
 
-A podcast network example website powered by the [Cosmic CMS](https://www.cosmicjs.com/) and Next.js.
+A podcast network website powered by the [Cosmic CMS](https://www.cosmicjs.com/) and Next.js.
 
 ## Features
 
