@@ -15,10 +15,10 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.416.0",
-    "next": "14.2.5",
+    "next": "canary",
     "next-themes": "^0.3.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "beta",
+    "react-dom": "beta",
     "react-markdown": "^9.0.1",
     "tailwind-merge": "^2.4.0"
   },

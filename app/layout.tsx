@@ -9,6 +9,7 @@ import { Footer } from "@/components/Footer";
 import { cosmic } from "@/cosmic/client";
 
 export const revalidate = 60;
+export const experimental_ppr = true;
 
 const inter = Inter({ subsets: ["latin"] });
 
