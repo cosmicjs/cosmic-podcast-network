@@ -4,7 +4,7 @@
   <img src="https://imgix.cosmicjs.com/a72c8c80-4dc7-11ef-b1ea-f56c65dfade9-cosmic-podcast-network-screenshot.png?w=2000&auto=forat,compression" />
 </a>
 
-[[View Live Demo](https://cosmic-podcast-network.vercel.app)]
+[[View the demo](https://cosmic-podcast-network.vercel.app)]
 
 [[Install the template](https://www.cosmicjs.com/templates/podcast-network)]
 
