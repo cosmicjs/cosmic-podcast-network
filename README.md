@@ -1,7 +1,7 @@
 # Podcast Network Template
 
 <a href="https://cosmic-podcast-network.vercel.app/">
-  <img src="https://imgix.cosmicjs.com/f2eeb900-4b9b-11ef-b1ea-f56c65dfade9-cosmic-podcast-network-screenshot.png?w=2000&auto=forat,compression" />
+  <img src="https://imgix.cosmicjs.com/a72c8c80-4dc7-11ef-b1ea-f56c65dfade9-cosmic-podcast-network-screenshot.png?w=2000&auto=forat,compression" />
 </a>
 
 [[View Live Demo](https://cosmic-podcast-network.vercel.app)]
