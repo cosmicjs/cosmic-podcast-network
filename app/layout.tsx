@@ -25,7 +25,7 @@ export async function generateMetadata() {
     description: globalSettings.metadata.description,
     openGraph: {
       images: [
-        "https://imgix.cosmicjs.com/f2eeb900-4b9b-11ef-b1ea-f56c65dfade9-cosmic-podcast-network-screenshot.png?w=2000&auto=forat,compression",
+        "https://imgix.cosmicjs.com/daec0820-4dd1-11ef-b1ea-f56c65dfade9-podcast-network-screenshot-3.png?w=2000&auto=forat,compression",
       ],
     },
   };
