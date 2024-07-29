@@ -6,6 +6,8 @@
 
 [[View Live Demo](https://cosmic-podcast-network.vercel.app)]
 
+[[Install the template](https://www.cosmicjs.com/templates/podcast-network)]
+
 A podcast network website powered by the [Cosmic CMS](https://www.cosmicjs.com/) and Next.js.
 
 ## Features
