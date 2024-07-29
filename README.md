@@ -1,4 +1,4 @@
-# Podcast Network Template
+# Cosmic Podcast Network
 
 <a href="https://cosmic-podcast-network.vercel.app/">
   <img src="https://imgix.cosmicjs.com/a72c8c80-4dc7-11ef-b1ea-f56c65dfade9-cosmic-podcast-network-screenshot.png?w=2000&auto=forat,compression" />
