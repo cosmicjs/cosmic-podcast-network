@@ -6,7 +6,7 @@
 
 [[View Live Demo](https://cosmic-podcast-network.vercel.app)]
 
-A podcast network template that shows you how to build a podcast / video entertainment website using Cosmic CMS, Next.js, and the [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk).
+A website template that functions as a podcast / video entertainment platform using Cosmic CMS, Next.js, and the [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk).
 
 ## Features
 
