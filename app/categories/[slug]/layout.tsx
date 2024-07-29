@@ -2,8 +2,6 @@
 import { CategoriesList } from "@/cosmic/blocks/videos/CategoriesList";
 import { cosmic } from "@/cosmic/client";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
-import { Loader } from "@/components/Loader";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -46,15 +44,13 @@ export default async function CategoryPage({
   try {
     return (
       <div className="p-4 md:px-8 mb-6">
-        <Suspense fallback={<Loader />}>
-          <CategoriesList
-            query={{ type: "categories" }}
-            activeSlug={params.slug}
-            limit={10}
-            skip={0}
-            className="mb-6 m-auto flex flex-wrap gap-2"
-          />
-        </Suspense>
+        <CategoriesList
+          query={{ type: "categories" }}
+          activeSlug={params.slug}
+          limit={10}
+          skip={0}
+          className="mb-6 m-auto flex flex-wrap gap-2"
+        />
         {children}
       </div>
     );
