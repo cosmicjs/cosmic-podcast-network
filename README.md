@@ -43,7 +43,7 @@ bun i
 
 ## Install the template and connect to Cosmic
 
-1. Log in to the [Cosmic dashboard](https://app.cosmicjs.com/) and create a new Project and select the Podcast Network template.
+1. Log in to the [Cosmic dashboard](https://app.cosmicjs.com/) and create a new Project and select the [Podcast Network template](https://www.cosmicjs.com/templates/podcast-network).
 
 2. Then copy the `.env.copy` to a new `.env.local` file. And add your API keys found in the Cosmic dashboard at _Project / API keys_.
 
