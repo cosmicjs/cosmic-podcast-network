@@ -1,10 +1,16 @@
 // app/channels/[slug]/page.tsx
 import { SingleChannel } from "@/cosmic/blocks/videos/SingleChannel";
+import { Suspense } from "react";
+import { Loader } from "@/components/Loader";
 
 export default async function SingleVideoPage({
   params,
 }: {
   params: { slug: string };
 }) {
-  return <SingleChannel query={{ slug: params.slug, type: "channels" }} />;
+  return (
+    <Suspense fallback={<Loader />}>
+      <SingleChannel query={{ slug: params.slug, type: "channels" }} />
+    </Suspense>
+  );
 }

@@ -2,6 +2,8 @@
 import { VideoList } from "@/cosmic/blocks/videos/VideoList";
 import { cosmic } from "@/cosmic/client";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
+import { Loader } from "@/components/Loader";
 
 export default async function CategoryPage({
   params,
@@ -21,12 +23,14 @@ export default async function CategoryPage({
         <h1 className="mb-6 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
           {category.title}
         </h1>
-        <VideoList
-          query={{ type: "videos", "metadata.categories": category.id }}
-          limit={10}
-          skip={0}
-          className="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-        />
+        <Suspense fallback={<Loader />}>
+          <VideoList
+            query={{ type: "videos", "metadata.categories": category.id }}
+            limit={10}
+            skip={0}
+            className="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+          />
+        </Suspense>
       </>
     );
   } catch (e: any) {
