@@ -9,6 +9,7 @@ import { Button } from "@/cosmic/elements/Button";
 import { Input } from "@/cosmic/elements/Input";
 import { Label } from "@/cosmic/elements/Label";
 import { Textarea } from "@/cosmic/elements/TextArea";
+import { addComment, AddCommentType } from "@/cosmic/blocks/comments/actions";
 
 export function CommentForm({
   resourceId,
@@ -31,7 +32,7 @@ export function CommentForm({
       setError(true);
       return;
     }
-    const newComment = {
+    const newComment: AddCommentType = {
       type: "comments",
       title: name,
       metadata: {
@@ -41,10 +42,12 @@ export function CommentForm({
       },
     };
     try {
-      await fetch("/api/comments", {
-        method: "POST",
-        body: JSON.stringify({ comment: newComment }),
-      });
+      const res = await addComment(newComment);
+      if (!res.object) {
+        setSubmitting(false);
+        setError(true);
+        return;
+      }
     } catch (err) {
       setSubmitting(false);
       setError(true);
