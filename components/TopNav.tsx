@@ -17,7 +17,7 @@ export async function TopNav() {
         <CirclePlayIcon className="size-8 mr-2 text-teal-500" />
         {globalSettings.metadata.site_title}
       </Link>
-      <div className="text-gray-500 text-sm hidden md:block">
+      <div className="text-gray-600 dark:text-gray-400 text-sm hidden md:block">
         {globalSettings.metadata.tagline}
       </div>
       <GitHubLink />
