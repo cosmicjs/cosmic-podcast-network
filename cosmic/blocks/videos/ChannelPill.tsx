@@ -8,6 +8,7 @@ export type ChannelType = {
     thumbnail: {
       imgix_url: string;
     };
+    image_alt_text: string;
   };
 };
 
@@ -23,7 +24,7 @@ export function ChannelPill({ channel }: { channel: ChannelType }) {
             rounded-full bg-gray-200 dark:bg-gray-800"
       >
         <img
-          alt={channel.title}
+          alt={channel.metadata.image_alt_text}
           src={`${channel.metadata.thumbnail.imgix_url}?w=80&auto=format,compression`}
           className="h-[40px] w-[40px] rounded-full object-cover"
         />

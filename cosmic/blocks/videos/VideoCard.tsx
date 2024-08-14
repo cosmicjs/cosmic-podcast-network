@@ -12,6 +12,7 @@ export type VideoType = {
     thumbnail: {
       imgix_url: string;
     };
+    image_alt_text: string;
     video: {
       url: string;
     };
@@ -40,7 +41,7 @@ export function VideoCard({
     <div>
       <Link href={`/watch/${video.id}-${video.slug}`}>
         <img
-          alt={video.title}
+          alt={video.metadata.image_alt_text}
           className="h-[175px] 2xl:h-[250px] w-full object-cover rounded-lg"
           src={`${video.metadata.thumbnail.imgix_url}?w=1200&auto=format,compression`}
         />
