@@ -20,6 +20,8 @@ A podcast network website powered by the [Cosmic CMS](https://www.cosmicjs.com/)
 
 🌓 Dark mode
 
+<img width="1161" alt="performance" src="https://github.com/user-attachments/assets/ec815177-7443-4a44-b8b7-7453028d374a">
+
 ## Getting Started
 
 First, clone this repo.
