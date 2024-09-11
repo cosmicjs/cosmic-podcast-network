@@ -7,7 +7,6 @@ import { PlayArea } from "./PlayArea";
 import Link from "next/link";
 import { CategoryPill, CategoryType } from "./CategoryPill";
 import { Comments } from "@/cosmic/blocks/comments/Comments";
-import { getObjectId } from "@/components/CosmicChrome";
 
 export async function SingleVideo({
   query,
