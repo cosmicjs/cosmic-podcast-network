@@ -8,9 +8,5 @@ export default async function SingleVideoPage({
 }: {
   params: { slug: string };
 }) {
-  return (
-    <Suspense fallback={<Loader />}>
-      <SingleChannel query={{ slug: params.slug, type: "channels" }} />
-    </Suspense>
-  );
+  return <SingleChannel query={{ slug: params.slug, type: "channels" }} />;
 }

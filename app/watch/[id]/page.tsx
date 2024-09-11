@@ -9,8 +9,6 @@ export default async function SingleVideoPage({
   params: { id: string };
 }) {
   return (
-    <Suspense fallback={<Loader />}>
-      <SingleVideo query={{ id: params.id.split("-")[0], type: "videos" }} />
-    </Suspense>
+    <SingleVideo query={{ id: params.id.split("-")[0], type: "videos" }} />
   );
 }
