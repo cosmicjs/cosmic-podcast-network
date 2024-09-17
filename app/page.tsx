@@ -6,6 +6,8 @@ import { ChannelsList } from "@/cosmic/blocks/videos/ChannelsList";
 import { Suspense } from "react";
 import { Loader } from "@/components/Loader";
 
+export const revalidate = 3600;
+
 export default async function Home() {
   return (
     <>
