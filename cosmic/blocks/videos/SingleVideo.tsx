@@ -20,9 +20,22 @@ export async function SingleVideo({
   try {
     const { object: video }: { object: VideoType } = await cosmic.objects
       .findOne(query)
-      .props("id,slug,title,metadata,created_at")
+      .props(
+        `{
+          id
+          slug
+          title
+          created_at
+          metadata
+        }`
+      )
       .depth(1)
-      .status(status ? status : "published");
+      .status(status ? status : "published")
+      .options({
+        media: {
+          props: "alt_text",
+        },
+      });
 
     return (
       <div className={className}>
@@ -45,7 +58,7 @@ export async function SingleVideo({
                 <img
                   className="mr-2 h-[60px] w-[60px] rounded-full object-cover"
                   src={`${video.metadata.channel.metadata.thumbnail.imgix_url}?w=120&auto=format,compression`}
-                  alt={video.metadata.channel.title}
+                  alt={video.metadata.channel.metadata.thumbnail.alt_text}
                 />
                 <div className="flex flex-col">
                   <span className="font-semibold text-zinc-800 dark:text-zinc-200">

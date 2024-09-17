@@ -11,8 +11,8 @@ export type VideoType = {
   metadata: {
     thumbnail: {
       imgix_url: string;
+      alt_text: string;
     };
-    image_alt_text: string;
     video: {
       url: string;
     };
@@ -23,6 +23,7 @@ export type VideoType = {
       title: string;
       metadata: {
         thumbnail: {
+          alt_text: string | undefined;
           imgix_url: string;
         };
       };
@@ -41,7 +42,7 @@ export function VideoCard({
     <div data-cosmic-object={video.id}>
       <Link href={`/watch/${video.id}-${video.slug}`}>
         <img
-          alt={video.metadata.image_alt_text}
+          alt={video.metadata.thumbnail.alt_text}
           className="h-[175px] 2xl:h-[250px] w-full object-cover rounded-lg"
           src={`${video.metadata.thumbnail.imgix_url}?w=1200&auto=format,compression`}
         />
@@ -66,7 +67,7 @@ export function VideoCard({
                 rounded-full bg-gray-200 dark:bg-gray-800"
               >
                 <img
-                  alt={video.metadata.channel.title}
+                  alt={video.metadata.channel.metadata.thumbnail.alt_text}
                   src={`${video.metadata.channel.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}
                   className="h-[40px] w-[40px] rounded-full object-cover"
                 />

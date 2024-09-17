@@ -44,7 +44,16 @@ export async function CategoriesList({
 }) {
   const { objects: categories } = await cosmic.objects
     .find(query)
-    .props("id,slug,title,metadata,created_at")
+    .props(
+      `{
+          id
+          slug
+          title
+          metadata {
+            emoji
+          }
+        }`
+    )
     .depth(1)
     .sort(sort ? sort : "-order")
     .limit(limit ? limit : 100)

@@ -19,7 +19,14 @@ export async function generateMetadata() {
       type: "settings",
       slut: "settings",
     })
-    .props("metadata.site_title,metadata.description")
+    .props(
+      `{
+      metadata {
+        site_title
+        description
+      }
+    }`
+    )
     .depth(1);
   return {
     title: globalSettings.metadata.site_title,
