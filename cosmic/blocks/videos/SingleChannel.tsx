@@ -15,9 +15,21 @@ export async function SingleChannel({
   try {
     const { object: channel } = await cosmic.objects
       .findOne(query)
-      .props("id,slug,title,metadata,created_at")
+      .props(
+        `{
+          id
+          slug
+          title
+          metadata
+        }`
+      )
       .depth(1)
-      .status(status ? status : "published");
+      .status(status ? status : "published")
+      .options({
+        media: {
+          props: "alt_text",
+        },
+      });
     return (
       <div className={className}>
         <div className="mb-6 w-full max-h-[300px] overflow-hidden">
@@ -30,7 +42,7 @@ export async function SingleChannel({
         <section className="px-4 md:px-8 max-w-[1650px] m-auto relative -top-[55px] h-[44px]">
           <div className="flex items-center mb-6 gap-6 pb-4">
             <img
-              alt={channel.title}
+              alt={channel.metadata.thumbnail.alt_text}
               src={`${channel.metadata.thumbnail.imgix_url}?w=400&auto=format,compression`}
               className="h-[100px] w-[100px] rounded-full object-cover border-4 border-white"
             />

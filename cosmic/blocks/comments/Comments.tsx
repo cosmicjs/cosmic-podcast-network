@@ -65,7 +65,16 @@ export async function Comments({
     // Get the id
     const { objects } = await cosmic.objects
       .find(query)
-      .props("title,slug,metadata,created_at")
+      .props(
+        `{
+          title
+          slug
+          metadata {
+            comment
+          }
+          created_at
+        }`
+      )
       .depth(1)
       .sort(sort ? sort : "created_at")
       .limit(limit ? limit : 100)

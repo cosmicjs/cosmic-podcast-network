@@ -7,8 +7,24 @@ export async function ChannelsList() {
       .find({
         type: "channels",
       })
-      .props("id,slug,title,metadata")
-      .depth(1);
+      .props(
+        `{
+          id
+          slug
+          title
+          metadata {
+            thumbnail {
+              imgix_url
+            }
+          }
+        }`
+      )
+      .depth(1)
+      .options({
+        media: {
+          props: "alt_text",
+        },
+      });
     return channels?.map((channel: ChannelType) => {
       return <ChannelPill key={channel.id} channel={channel} />;
     });

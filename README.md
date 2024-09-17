@@ -8,7 +8,7 @@
 
 [[Install the template](https://www.cosmicjs.com/templates/podcast-network)]
 
-A podcast network website powered by the [Cosmic CMS](https://www.cosmicjs.com/) and Next.js.
+A podcast network website powered by the [Cosmic CMS](https://www.cosmicjs.com/) and Next.js. NOTE: uses a canary version of the [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk) that includes experimental features including [media data fetching](https://github.com/cosmicjs/cosmic-sdk-js/pull/38) and [props graph syntax](https://github.com/cosmicjs/cosmic-sdk-js/pull/37).
 
 ## Features
 

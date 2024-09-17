@@ -12,7 +12,7 @@ export function PlayArea({ video }: { video: VideoType }) {
           <button onClick={() => setIsClicked(true)} className="w-full">
             <img
               src={`${video.metadata.thumbnail.imgix_url}?w=2000&auto=format,compression`}
-              alt={video.title}
+              alt={video.metadata.thumbnail.alt_text}
               className="aspect-video w-full object-cover"
             />
             <div className="absolute top-[50%] justify-center flex w-full">
