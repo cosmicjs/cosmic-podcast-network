@@ -51,6 +51,7 @@ export default function RootLayout({
           "bg-white dark:bg-black dark:text-gray-400 text-gray-900",
           inter.className
         )}
+        data-cosmic-bucket="podcast-network-production"
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <TopNav />

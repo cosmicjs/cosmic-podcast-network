@@ -44,7 +44,10 @@ export async function SingleVideo({
         </div>
         <section className="m-auto grid items-center pb-8 md:container p-4 pt-8 mb-8">
           <div className="relative m-auto flex w-full md:w-[750px] flex-col items-start gap-2">
-            <h1 className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl">
+            <h1
+              data-cosmic-object={video.id}
+              className="mb-4 text-3xl font-extrabold leading-tight tracking-tighter text-black dark:text-white md:text-4xl"
+            >
               {video.title}
             </h1>
             <div className="mb-2 md:flex gap-4">
