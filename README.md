@@ -12,7 +12,7 @@ A podcast network website powered by the [Cosmic CMS](https://www.cosmicjs.com/)
 
 ## Features
 
-✨ NEW: Now inlucdes account creation and login using the [User Management Block](https://blocks.cosmicjs.com/blocks/user-management)
+✨ NEW: Now includes account creation and login using the [User Management Block](https://blocks.cosmicjs.com/blocks/user-management)
 
 🔥 Performance optimized
 
