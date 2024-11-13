@@ -45,7 +45,7 @@ export default function ForgotPasswordForm({
           If an account exists with that email address, we've sent instructions
           to reset your password.
         </p>
-        <Link href="/login" className="text-blue-600">
+        <Link href="/login" className="text-teal-500">
           Return to login
         </Link>
       </div>
