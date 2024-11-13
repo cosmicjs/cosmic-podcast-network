@@ -35,7 +35,7 @@ export function FollowButton({ channelId }: { channelId: string }) {
     try {
       const result = await followChannel(user.id, channelId);
       if (result.success) {
-        setIsFollowing(result.isFollowing);
+        setIsFollowing(result.isFollowing ?? false);
       }
     } catch (error) {
       console.error("Error following channel:", error);
