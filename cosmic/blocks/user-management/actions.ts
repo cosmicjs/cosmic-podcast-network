@@ -144,7 +144,7 @@ export async function login(formData: FormData) {
     };
 
     // Set the user_id cookie
-    cookies().set("user_id", result.object.id, {
+    (await cookies()).set("user_id", result.object.id, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
@@ -153,6 +153,7 @@ export async function login(formData: FormData) {
 
     return { user };
   } catch (error) {
+    console.error("Login error:", error);
     return { error: "Invalid email or password" };
   }
 }
@@ -178,12 +179,13 @@ export async function getUserData(userId: string) {
 
     return { data: object, error: null };
   } catch (error) {
+    console.error("Error fetching user data:", error);
     return { data: null, error: "Failed to fetch user data" };
   }
 }
 
 export async function getUserFromCookie() {
-  const cookieStore = cookies();
+  const cookieStore = await cookies();
   const userId = cookieStore.get("user_id");
   if (!userId) {
     return null;
@@ -283,7 +285,7 @@ export async function updateUserProfile(userId: string, formData: FormData) {
       });
     }
 
-    let updates: {
+    const updates: {
       title: string;
       metadata: any;
       thumbnail?: string;
@@ -468,6 +470,6 @@ export async function getAuthUser() {
 
 export async function logoutUser() {
   "use server";
-  cookies().delete("user_id");
+  (await cookies()).delete("user_id");
   return { success: true };
 }
