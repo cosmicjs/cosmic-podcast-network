@@ -9,18 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cosmicjs/sdk": "1.0.15",
+    "@cosmicjs/sdk": "1.2.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
+    "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.416.0",
+    "lucide-react": "^0.456.0",
     "next": "canary",
     "next-themes": "^0.3.0",
     "react": "beta",
     "react-dom": "beta",
     "react-markdown": "^9.0.1",
-    "tailwind-merge": "^2.4.0"
+    "resend": "^4.0.1-alpha.0",
+    "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "typescript": "^5",
