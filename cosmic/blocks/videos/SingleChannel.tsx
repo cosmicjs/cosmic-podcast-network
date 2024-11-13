@@ -2,7 +2,8 @@
 import { cosmic } from "@/cosmic/client";
 import { notFound } from "next/navigation";
 import { VideoList } from "@/cosmic/blocks/videos/VideoList";
-
+import { FollowButton } from "@/cosmic/blocks/videos/FollowButton";
+import { useAuth } from "@/cosmic/blocks/user-management/AuthContext";
 export async function SingleChannel({
   query,
   className,
@@ -52,6 +53,9 @@ export async function SingleChannel({
             >
               {channel.title}
             </h1>
+            <div className="ml-auto pt-12">
+              <FollowButton channelId={channel.id} />
+            </div>
           </div>
         </section>
         <div className="flex items-center mb-6 border-b dark:border-gray-800 pb-4"></div>

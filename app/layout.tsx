@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/cosmic/utils";
 import { Footer } from "@/components/Footer";
 import { cosmic } from "@/cosmic/client";
+import { AuthProvider } from "@/cosmic/blocks/user-management/AuthContext";
 
 export const revalidate = 60;
 export const experimental_ppr = true;
@@ -53,13 +54,15 @@ export default function RootLayout({
         )}
         data-cosmic-bucket="podcast-network-production"
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TopNav />
-          <SideBar />
-          <div className="md:ml-[80px] mt-[70px]">{children}</div>
-          <TailwindIndicator />
-          <Footer />
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <TopNav />
+            <SideBar />
+            <div className="md:ml-[80px] mt-[70px]">{children}</div>
+            <TailwindIndicator />
+            <Footer />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

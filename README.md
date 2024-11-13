@@ -12,6 +12,8 @@ A podcast network website powered by the [Cosmic CMS](https://www.cosmicjs.com/)
 
 ## Features
 
+✨ NEW: Now includes account creation and login using the [User Management Block](https://blocks.cosmicjs.com/blocks/user-management)
+
 🔥 Performance optimized
 
 🪄 Partial prerendering
@@ -54,6 +56,12 @@ bun i
 COSMIC_BUCKET_SLUG=your_bucket_slug
 COSMIC_READ_KEY=your_bucket_read_key
 COSMIC_WRITE_KEY=your_bucket_write_key
+
+RESEND_API_KEY=change_to_your_resend_api_key
+NEXT_PUBLIC_APP_URL=change_to_your_app_url
+NEXT_PUBLIC_APP_NAME="Change to your app name"
+SUPPORT_EMAIL=change_to_your_support_email
+CONTACT_EMAIL=change_to_your_contact_email
 ```
 
 ## Run the app

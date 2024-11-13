@@ -19,6 +19,7 @@ export type VideoType = {
     description: string;
     categories: CategoryType[];
     channel: {
+      id: string;
       slug: string;
       title: string;
       metadata: {
