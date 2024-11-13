@@ -27,8 +27,8 @@ export default async function FeedPage() {
           My Feed
         </h1>
         <p className="text-gray-600 dark:text-gray-400">
-          You haven't followed any channels yet. Follow some channels to see
-          their videos here!
+          You haven&apos;t followed any channels yet. Follow some channels to
+          see their videos here!
         </p>
       </div>
     );
