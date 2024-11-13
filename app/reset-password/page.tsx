@@ -1,3 +1,4 @@
+// app/reset-password/page.tsx
 import { redirect } from "next/navigation";
 import ResetPasswordForm from "@/cosmic/blocks/user-management/ResetPasswordForm";
 import { resetPassword } from "@/cosmic/blocks/user-management/actions";
