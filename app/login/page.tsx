@@ -8,7 +8,7 @@ export default function LoginPage() {
   return (
     <div className="container mx-auto py-8 px-4">
       <Suspense fallback={<Loader />}>
-        <LoginClient onSubmit={login} />
+        <LoginClient onSubmit={login} redirect="/feed" />
       </Suspense>
     </div>
   );

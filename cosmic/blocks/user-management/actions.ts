@@ -143,9 +143,6 @@ export async function login(formData: FormData) {
       image: result.object.metadata.avatar?.imgix_url,
     };
 
-    // Generate token
-    const token = Buffer.from(result.object.id).toString("base64");
-
     // Set the user_id cookie
     cookies().set("user_id", result.object.id, {
       httpOnly: true,
@@ -154,7 +151,7 @@ export async function login(formData: FormData) {
       path: "/",
     });
 
-    return { token, user };
+    return { user };
   } catch (error) {
     return { error: "Invalid email or password" };
   }
@@ -462,4 +459,15 @@ export async function resetPassword(token: string, formData: FormData) {
       error: "Failed to reset password. Please try again.",
     };
   }
+}
+
+export async function getAuthUser() {
+  "use server";
+  return await getUserFromCookie();
+}
+
+export async function logoutUser() {
+  "use server";
+  cookies().delete("user_id");
+  return { success: true };
 }

@@ -51,8 +51,7 @@ export function UserProfileForm({ user }: UserProfileFormProps) {
       const result = await updateUserProfile(user.id, formData);
 
       if (result.success) {
-        // Update local storage with new user data
-        login(localStorage.getItem("token") || "", {
+        login({
           id: result.data.id,
           name: result.data.title,
           email: result.data.metadata.email,
@@ -61,7 +60,7 @@ export function UserProfileForm({ user }: UserProfileFormProps) {
 
         setMessage("Profile updated successfully!");
       } else {
-        setMessage("Error updating profile");
+        setMessage(result.error || "Error updating profile");
       }
     } catch (error) {
       setMessage("Error updating profile");

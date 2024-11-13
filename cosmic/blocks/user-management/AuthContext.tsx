@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { getAuthUser, logoutUser } from "./actions";
 
 type User = {
   id: string;
@@ -11,7 +12,7 @@ type User = {
 
 type AuthContextType = {
   user: User;
-  login: (token: string, userData: User) => void;
+  login: (userData: User) => void;
   logout: () => void;
   isLoading: boolean;
 };
@@ -28,33 +29,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    const userData = localStorage.getItem("user");
-
-    if (token && userData) {
-      try {
-        const parsedUser = JSON.parse(userData);
-        setUser(parsedUser);
-      } catch (error) {
-        console.error("Error parsing user data:", error);
-        // Clear invalid data
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-      }
-    }
-    setIsLoading(false);
+    getAuthUser()
+      .then((userData) => {
+        if (userData) {
+          setUser(userData);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching user data:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
 
-  const login = (token: string, userData: User) => {
-    localStorage.setItem("token", token);
-    localStorage.setItem("user", JSON.stringify(userData));
+  const login = (userData: User) => {
     setUser(userData);
   };
 
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    setUser(null);
+  const logout = async () => {
+    try {
+      await logoutUser();
+      setUser(null);
+    } catch (error) {
+      console.error("Error logging out:", error);
+    }
   };
 
   return (
