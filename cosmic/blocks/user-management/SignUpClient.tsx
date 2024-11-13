@@ -1,29 +1,29 @@
-"use client"
-import { useAuth } from "@/cosmic/blocks/user-management/AuthContext"
-import AuthForm from "@/cosmic/blocks/user-management/AuthForm"
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-import { Loader2 } from "lucide-react"
-import Link from "next/link"
+"use client";
+import { useAuth } from "@/cosmic/blocks/user-management/AuthContext";
+import AuthForm from "@/cosmic/blocks/user-management/AuthForm";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
+import Link from "next/link";
 
 export default function SignUpClient({ onSubmit }: { onSubmit: any }) {
-  const { user, isLoading } = useAuth()
-  const router = useRouter()
-  const [isSignupComplete, setIsSignupComplete] = useState(false)
-  const [error, setError] = useState("")
+  const { user, isLoading } = useAuth();
+  const router = useRouter();
+  const [isSignupComplete, setIsSignupComplete] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (!isLoading && user) {
-      router.push("/dashboard")
+      router.push("/dashboard");
     }
-  }, [user, isLoading, router])
+  }, [user, isLoading, router]);
 
   if (isLoading) {
     return (
       <div className="flex min-h-[50vh] items-center justify-center p-4">
-        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+        <Loader2 className="h-8 w-8 animate-spin text-teal-500" />
       </div>
-    )
+    );
   }
 
   if (isSignupComplete) {
@@ -34,28 +34,28 @@ export default function SignUpClient({ onSubmit }: { onSubmit: any }) {
           We've sent you a verification link. Please check your email to
           complete the signup process.
         </p>
-        <Link href="/login" className="text-blue-600">
+        <Link href="/login" className="text-teal-500">
           Go to login
         </Link>
       </div>
-    )
+    );
   }
 
   const handleSubmit = async (formData: FormData) => {
-    setError("")
-    const result = await onSubmit(formData)
+    setError("");
+    const result = await onSubmit(formData);
 
     if (result.error) {
-      setError(result.error)
-      return result
+      setError(result.error);
+      return result;
     }
 
     if (result.success) {
-      setIsSignupComplete(true)
+      setIsSignupComplete(true);
     }
 
-    return result
-  }
+    return result;
+  };
 
   return (
     <>
@@ -66,5 +66,5 @@ export default function SignUpClient({ onSubmit }: { onSubmit: any }) {
       )}
       <AuthForm type="signup" onSubmit={handleSubmit} />
     </>
-  )
+  );
 }
