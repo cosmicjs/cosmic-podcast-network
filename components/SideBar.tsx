@@ -14,7 +14,7 @@ export function SideBar() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "md:hidden border dark:border-gray-900 block md:bg-transparent bg-white shadow-sm dark:bg-gray-900 fixed left-0 top-20 text-primary-foreground p-2 rounded-r-lg z-50",
+          "md:hidden border dark:border-gray-900 block md:bg-transparent bg-white shadow-sm dark:bg-gray-900 fixed left-0 bottom-10 text-primary-foreground p-2 rounded-r-lg z-50",
           isOpen && "translate-x-[80px]",
           "transition-transform duration-300"
         )}
