@@ -5,6 +5,17 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { Loader } from "@/components/Loader";
 
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const { objects: categories } = await cosmic.objects.find({
+    type: "categories",
+  });
+  return categories.map((category: { slug: string }) => ({
+    slug: category.slug,
+  }));
+}
+
 export default async function CategoryPage({
   params,
 }: {
