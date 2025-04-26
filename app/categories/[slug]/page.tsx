@@ -19,12 +19,13 @@ export async function generateStaticParams() {
 export default async function CategoryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   try {
+    const resolvedParams = await params;
     const { object: category } = await cosmic.objects
       .findOne({
-        slug: params.slug,
+        slug: resolvedParams.slug,
         type: "categories",
       })
       .props("id,title")

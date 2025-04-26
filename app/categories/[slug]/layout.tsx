@@ -7,11 +7,12 @@ import { Metadata } from "next";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const resolvedParams = await params;
   const { object: category } = await cosmic.objects
     .findOne({
-      slug: params.slug,
+      slug: resolvedParams.slug,
       type: "categories",
     })
     .props("title")
@@ -34,19 +35,21 @@ export async function generateMetadata({
   };
 }
 
-export default async function CategoryPage({
+export default async function Layout({
   children,
   params,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-  params: { slug: string };
-}>) {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+
   try {
     return (
       <div className="p-4 md:px-8 mb-6">
         <CategoriesList
           query={{ type: "categories" }}
-          activeSlug={params.slug}
+          activeSlug={resolvedParams.slug}
           limit={10}
           skip={0}
           className="mb-6 m-auto flex flex-wrap gap-2"

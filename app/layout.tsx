@@ -10,7 +10,6 @@ import { cosmic } from "@/cosmic/client";
 import { AuthProvider } from "@/cosmic/blocks/user-management/AuthContext";
 
 export const revalidate = 60;
-export const experimental_ppr = true;
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,9 +41,11 @@ export async function generateMetadata() {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params?: any;
+}) {
   return (
     <html lang="en">
       <body
