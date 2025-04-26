@@ -3,12 +3,13 @@ import { redirect } from "next/navigation";
 import ResetPasswordForm from "@/cosmic/blocks/user-management/ResetPasswordForm";
 import { resetPassword } from "@/cosmic/blocks/user-management/actions";
 
-export default function ResetPasswordPage({
+export default async function ResetPasswordPage({
   searchParams,
 }: {
-  searchParams: { token?: string };
+  searchParams: Promise<{ token?: string }>;
 }) {
-  const token = searchParams.token;
+  const resolvedParams = await searchParams;
+  const token = resolvedParams.token;
 
   if (!token) {
     redirect("/login");

@@ -18,11 +18,13 @@ export async function generateStaticParams() {
 export default async function SingleVideoPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const resolvedParams = await params;
+
   return (
     <Suspense fallback={<Loader />}>
-      <SingleChannel query={{ slug: params.slug, type: "channels" }} />
+      <SingleChannel query={{ slug: resolvedParams.slug, type: "channels" }} />
     </Suspense>
   );
 }

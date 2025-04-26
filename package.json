@@ -17,7 +17,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.456.0",
-    "next": "canary",
+    "next": "15.3.1",
     "next-themes": "^0.3.0",
     "react": "beta",
     "react-dom": "beta",

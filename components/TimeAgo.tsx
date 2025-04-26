@@ -7,8 +7,8 @@ import { LoaderCircle } from "lucide-react";
 export function TimeAgo({ time }: { time: string }) {
   const [localTime, setTLocalTime] = useState<string | null>(null);
   useEffect(() => {
-    return setTLocalTime(timeAgo(time));
-  }, [localTime, setTLocalTime]);
+    setTLocalTime(timeAgo(time));
+  }, [time]);
   return (
     <div className="h-6">
       {!localTime ? (

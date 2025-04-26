@@ -18,11 +18,15 @@ export async function generateStaticParams() {
 export default async function SingleVideoPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const resolvedParams = await params;
+
   return (
     <Suspense fallback={<Loader />}>
-      <SingleVideo query={{ id: params.id.split("-")[0], type: "videos" }} />
+      <SingleVideo
+        query={{ id: resolvedParams.id.split("-")[0], type: "videos" }}
+      />
     </Suspense>
   );
 }
